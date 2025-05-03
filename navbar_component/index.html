@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GreatFrontEnd Projects</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/favicon.ico" sizes="any" />
+
+    <script src="./js/index.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="header__logo" aria-label="Go to homepage">
+        <img src="./img/abstractly.svg" alt="Main Logo of Abstractly Company" />
+      </a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__list-item">
+            <a href="/" aria-label="Link to the home page">Home</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="/features" aria-label="Link to the features page"
+              >Features</a
+            >
+          </li>
+          <li class="nav__list-item">
+            <a href="/pricing" aria-label="Link to the pricing page">Pricing</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="/about-us" aria-label="Link to the about us page"
+              >About us</a
+            >
+          </li>
+          <li class="nav__list-item">
+            <a href="/contact" aria-label="Link to the contact page">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav__btn-group">
+        <a href="/learn-more" class="nav__btn nav__btn-learn-more"
+          >Learn more</a
+        >
+        <a href="/pricing" class="nav__btn nav__btn-see-pricing">See pricing</a>
+      </div>
+
+      <button
+        class="header__mobile-toggle"
+        aria-label="Open mobile navigation"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span class="header__burger-icon"></span>
+      </button>
+
+      <!-- MOBILE NAVIGATION -->
+      <div
+        class="nav--mobile"
+        id="mobile-menu"
+        aria-hidden="true"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="header__mobile-wrapper">
+          <a
+            href="/"
+            class="header__logo header__logo--mobile"
+            aria-label="Go to homepage"
+          >
+            <img
+              src="./img/abstractly.svg"
+              alt="Main Logo of Abstractly Company"
+            />
+          </a>
+
+          <button
+            class="header__mobile-close"
+            aria-label="Close mobile navigation"
+          ></button>
+        </div>
+
+        <nav class="nav__mobile">
+          <ul class="nav__list nav__list--mobile">
+            <li class="nav__list-item nav__list-item--mobile">
+              <a href="/" aria-label="Link to the home page">Home</a>
+            </li>
+            <li class="nav__list-item nav__list-item--mobile">
+              <a href="/features" aria-label="Link to the features page"
+                >Features</a
+              >
+            </li>
+            <li class="nav__list-item nav__list-item--mobile">
+              <a href="/pricing" aria-label="Link to the pricing page"
+                >Pricing</a
+              >
+            </li>
+            <li class="nav__list-item nav__list-item--mobile">
+              <a href="/about-us" aria-label="Link to the about us page"
+                >About us</a
+              >
+            </li>
+            <li class="nav__list-item nav__list-item--mobile">
+              <a href="/contact" aria-label="Link to the contact page"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav__btn-group nav__btn-group--mobile">
+          <a href="/learn-more" class="nav__btn nav__btn--learn-more"
+            >Learn more</a
+          >
+          <a href="/pricing" class="nav__btn nav__btn--see-pricing"
+            >See pricing</a
+          >
+        </div>
+      </div>
+
+      <div class="nav--background" aria-hidden="true"></div>
+    </header>
+  </body>
+</html>

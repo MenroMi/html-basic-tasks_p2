@@ -9,18 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileCloseButton = document.querySelector('.header__mobile-close');
 
   const mobileNavigation = document.querySelector('.nav--mobile');
-  const mobileBackground = document.querySelector('.nav--background');
+  const background = document.querySelector('.background');
 
   const toggleMobileNavigation = (isOpen) => {
     const navClassList = mobileNavigation.classList;
-    const navBackgroundClassList = mobileBackground.classList;
+    const backgroundClassList = background.classList;
 
     if (isOpen) {
       navClassList.add('open');
-      navBackgroundClassList.add('open');
+      backgroundClassList.add('open');
     } else {
       navClassList.remove('open');
-      navBackgroundClassList.remove('open');
+      backgroundClassList.remove('open');
     }
 
     // Block scroll when mobile navigation is open
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     desktopButtonGroup.setAttribute('aria-hidden', String(isHidden));
 
     mobileNavigation.setAttribute('aria-hidden', String(!isHidden));
-    mobileBackground.setAttribute('aria-hidden', String(!isHidden));
+    background.setAttribute('aria-hidden', String(!isHidden));
   };
 
 

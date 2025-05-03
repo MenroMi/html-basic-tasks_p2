@@ -18,13 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isOpen) {
       navClassList.add('open');
       navBackgroundClassList.add('open');
-
     } else {
       navClassList.remove('open');
       navBackgroundClassList.remove('open');
     }
 
-    // Block scroll when navigation is open
+    // Block scroll when mobile navigation is open
     document.body.style.overflow = isOpen ? 'hidden' : '';
 
     mobileOpenButton.setAttribute('aria-expanded', String(isOpen));

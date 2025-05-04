@@ -20,6 +20,8 @@
 
   --basic-shadow: 0px 1px 2px 0 rgb(0 0 0 / 0.06),
     0px 1px 3px 0 rgb(0 0 0 / 0.1);
+
+  --focus-outline: 4px solid var(--indigo-200);
 }
 
 body {
@@ -40,7 +42,6 @@ body {
 
   height: 100vh;
   width: 100%;
-  overflow: hidden;
 
   display: flex;
 
@@ -255,8 +256,14 @@ a {
 }
 
 .nav__btn-learn-more {
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: var(--neutral-200);
+
   color: var(--neutral-900);
   background-color: var(--white);
+
+  transition: background-color 0.2s ease;
 }
 
 .nav__btn-see-pricing {
@@ -268,9 +275,13 @@ a {
 .header__mobile-toggle {
   display: none;
   flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
   border: none;
-  width: 20px;
-  height: 100%;
+  width: 24px;
+  height: 24px;
   background-color: transparent;
 
   cursor: pointer;
@@ -278,10 +289,11 @@ a {
 
 .header__burger-icon {
   position: relative;
-  width: inherit;
+  width: 20px;
   display: inline-block;
   height: 2px;
   background-color: var(--neutral-600);
+  transition: background-color 0.2s ease;
 }
 
 .header__burger-icon::before {
@@ -308,6 +320,39 @@ a {
   bottom: -10px;
 }
 
+/* PSEUDO CLASSES */
+.header__mobile-toggle:hover > .header__burger-icon {
+  background-color: var(--neutral-900);
+}
+
+.nav__btn.nav__btn--see-pricing:hover {
+  background-color: var(--indigo-800);
+}
+
+.nav__btn-learn-more:hover,
+.nav__btn-see-pricing:hover,
+.nav__btn.nav__btn--learn-more:hover {
+  background-color: var(--neutral-200);
+}
+
+.nav__btn-learn-more:focus,
+.nav__btn-see-pricing:focus,
+.header__logo:focus,
+.header__mobile-toggle:focus,
+.nav__btn.nav__btn--learn-more:focus,
+.nav__btn.nav__btn--see-pricing:focus,
+.header__mobile-close:focus,
+.nav__list-item > a:focus {
+  outline: var(--focus-outline);
+}
+
+.header__logo:focus,
+.nav__list-item > a:focus,
+.header__mobile-toggle:focus,
+.header__mobile-close:focus {
+  border-radius: 4px;
+}
+
 /* MOBILE NAVIGATION */
 .nav--mobile {
   display: none;
@@ -324,7 +369,7 @@ a {
   padding: 32px 16px;
 }
 
-.background {
+.nav--background {
   display: none;
 
   position: absolute;
@@ -429,14 +474,6 @@ a {
   box-shadow: var(--basic-shadow);
 }
 
-.close {
-  display: none;
-}
-
-.open {
-  display: flex;
-}
-
 @media (max-width: 1024px) {
   .header {
     gap: 16px;
@@ -463,6 +500,10 @@ a {
   }
 
   .header__mobile-toggle {
-    display: block;
+    display: flex;
   }
+}
+
+.is-open {
+  display: flex;
 }

@@ -18,9 +18,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isOpen) {
       navClassList.add('is-open');
       backgroundClassList.add('is-open');
+
+      requestAnimationFrame(() => {
+        navClassList.add('animate-in');
+      });
     } else {
-      navClassList.remove('is-open');
+      navClassList.remove('animate-in');
+      navClassList.add('animate-out');
+
       backgroundClassList.remove('is-open');
+
+      const onTransitionEnd = () => {
+        navClassList.remove('is-open', 'animate-out');
+        mobileNavigation.removeEventListener('transitionend', onTransitionEnd);
+      };
+
+      mobileNavigation.addEventListener('transitionend', onTransitionEnd);
     }
 
     // Block scroll when mobile navigation is open
